@@ -1,0 +1,866 @@
+/* --- CÀI ĐẶT CHUNG --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fdfcf8; /* Màu nền kem nhạt giống ảnh */
+    color: #1a3245; /* Màu chữ xanh navy đậm */
+    overflow-x: hidden; /* Chống cuộn ngang */
+}
+
+/* --- HEADER --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 8%;
+    position: absolute; /* Đặt menu nổi lên trên */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #d19f7b; /* Màu vàng hồng */
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-style: italic;
+}
+.logo img {
+    max-width: 200px; 
+    height: auto;     
+}
+
+
+.ring-icon {
+    font-size: 14px;
+    margin-bottom: -5px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 30px; /* Khoảng cách giữa các chữ trong menu */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #4a6478; /* Màu chữ menu */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #d19f7b; /* Đổi màu khi di chuột vào */
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    display: flex;
+    min-height: 100vh; /* Cao bằng 100% màn hình */
+    align-items: center;
+}
+
+.hero-content {
+    flex: 1; /* Chiếm 50% màn hình */
+    padding-left: 8%;
+    padding-right: 4%;
+    margin-top: 50px;
+}
+
+.subtitle {
+    font-family: 'Montserrat', sans-serif;
+    color: #d19f7b;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    line-height: 1.1;
+    font-weight: 400;
+    color: #102738;
+    margin-bottom: 25px;
+}
+
+.dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #d19f7b;
+    transform: rotate(45deg); /* Tạo hình thoi giống viên kim cương */
+    margin-left: 10px;
+}
+
+.hero-content p {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #4a6478;
+}
+
+.hero-image {
+    flex: 1.2; /* Chiếm phần lớn hơn một chút ở bên phải */
+    height: 100vh;
+    overflow: hidden;
+    /* TẠO ĐƯỜNG CONG (BO TRÒN) CHO BỨC ẢNH BÊN TRÁI */
+    border-top-left-radius: 400px; 
+    border-bottom-left-radius: 400px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh không bị méo */
+    object-position: center;
+}
+/* --- NÚT BẤM (BUTTON) --- */
+.btn-shop {
+    display: inline-block;
+    background-color: #dec0af; 
+    color: #ffffff; 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 15px 40px;
+    margin-top: 40px;
+    transition: background-color 0.3s ease; 
+}
+
+.btn-shop:hover {
+    background-color: #c9a691; 
+}
+/* --- BEST-SELLING SECTION --- */
+.best-selling {
+    padding: 80px 8%;
+    background-color: #fdfcf8;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    color: #102738;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.section-header p {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #4a6478;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Sử dụng CSS Grid để chia 4 cột bằng nhau */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.product-card {
+    background-color: #ffffff; /* Nền trắng cho sản phẩm */
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03); /* Đổ bóng nhẹ cho đẹp */
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.product-card h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #102738;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.price {
+    font-family: 'Montserrat', sans-serif;
+    color: #dec0af; /* Màu cam sữa */
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.btn-cart {
+    background-color: #dec0af;
+    color: white;
+    border: none;
+    width: 100%; /* Nút kéo dài hết ô */
+    padding: 12px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-cart:hover {
+    background-color: #c9a691;
+}
+/* --- COLLECTION PROMO SECTION --- */
+.collection-promo {
+    display: flex;
+    align-items: center;
+    padding: 80px 8%;
+    background-color: #fdfcf8;
+    gap: 50px;
+}
+
+.promo-content {
+    flex: 1;
+}
+
+.promo-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 65px;
+    line-height: 1.1;
+    color: #102738;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.promo-sub {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #4a6478;
+    margin-bottom: 25px;
+}
+
+.highlight {
+    color: #dec0af; /* Đổi màu những chữ đặc biệt */
+}
+
+.promo-desc {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: #4a6478;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.promo-image-box {
+    flex: 1;
+    position: relative; /* Để đặt cái khối màu nằm sau ảnh */
+}
+
+.promo-image-box img {
+    width: 80%;
+    height: auto;
+    display: block;
+    margin-left: auto; /* Đẩy ảnh lệch sang phải */
+    position: relative;
+    z-index: 2; /* Nổi lên trên khối màu */
+}
+
+.bg-shape {
+    position: absolute;
+    width: 70%;
+    height: 60%;
+    background-color: #eeddd3; /* Màu khối nền đằng sau */
+    top: 20%;
+    left: 10%;
+    z-index: 1; /* Chìm xuống dưới ảnh */
+}
+/* --- CATEGORIES SECTION --- */
+.categories-section {
+    padding: 80px 8%;
+    background-color: #fdfcf8;
+}
+
+.categories-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.category-item {
+    flex: 1;
+    position: relative; /* Dùng để đặt chữ đè lên ảnh */
+    overflow: hidden;
+}
+
+.category-item img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+}
+
+.category-item h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Bí quyết để căn chữ chính giữa ảnh */
+    color: #ffffff; /* Chữ màu trắng */
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 400;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* Đổ bóng để dễ đọc trên nền sáng */
+}
+/* --- AURORA PROM SET SECTION --- */
+.prom-set {
+    display: flex;
+    align-items: center;
+    padding: 80px 8%;
+    background-color: #fdfcf8;
+    gap: 50px;
+}
+
+.prom-content {
+    flex: 1;
+}
+
+.prom-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 55px;
+    color: #102738;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.italic-desc {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: #4a6478;
+    margin-bottom: 40px;
+}
+
+.match-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.match-img-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #faebd7; /* Nền nhạt */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border: 2px solid #fdfcf8;
+    box-shadow: 0 0 0 1px #eeddd3; /* Tạo vòng viền mỏng bên ngoài */
+}
+
+.match-img-circle img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+.match-price {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #888;
+    font-size: 18px;
+}
+
+.highlight-price {
+    color: #d19f7b;
+    font-size: 24px;
+}
+
+.prom-image {
+    flex: 1.2;
+}
+
+.prom-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+/* --- GENTLE BEAUTY SECTION --- */
+.gentle-beauty {
+    display: flex;
+    align-items: center;
+    padding: 100px 8%;
+    background-color: #fdfcf8;
+    gap: 80px;
+}
+
+.beauty-image-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+.beauty-image-wrapper img {
+    width: 90%;
+    height: auto;
+    position: relative;
+    z-index: 2; /* Nổi lên trên khối màu */
+    display: block;
+}
+
+.bg-block-left {
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    background-color: #eeddd3;
+    top: 20%;
+    left: -10%; /* Kéo dãn sang viền trái màn hình */
+    z-index: 1; /* Nằm dưới ảnh */
+}
+
+.beauty-content {
+    flex: 1;
+}
+
+.beauty-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    line-height: 1.1;
+    color: #102738;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+/* CSS để tự tạo dấu chấm hình thoi (Diamond) thay thế gạch đầu dòng mặc định */
+.diamond-list {
+    list-style: none; /* Tắt gạch đầu dòng mặc định */
+    margin-top: 30px;
+}
+
+.diamond-list li {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #4a6478;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 30px; /* Nhường chỗ cho icon */
+}
+
+/* Dùng ký hiệu giả (::before) để vẽ hình thoi */
+.diamond-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    background-color: #eeddd3; /* Màu cam nhạt */
+    transform: rotate(45deg); /* Xoay chéo hình vuông thành hình thoi */
+}
+/* --- NEW COLLECTION TABS --- */
+.new-collection-tabs {
+    padding: 80px 8%;
+    background-color: #fdfcf8;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.tab {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #888888;
+    cursor: pointer;
+    padding-bottom: 10px;
+    border-bottom: 2px solid transparent; /* Viền ẩn */
+    transition: 0.3s;
+}
+
+/* Hiệu ứng khi tab được chọn (Active) hoặc di chuột vào */
+.tab.active, .tab:hover {
+    color: #102738;
+    border-bottom: 2px solid #d19f7b; /* Hiện viền màu cam đất */
+}
+/* --- NEW ARRIVALS COMPLEX SECTION --- */
+.new-arrivals-complex {
+    display: flex;
+    align-items: center;
+    padding: 100px 0 100px 8%; /* Không padding bên phải để ảnh giữa tràn viền */
+    background-color: #fdfcf8;
+    position: relative;
+}
+
+/* Khối bên trái */
+.left-box {
+    width: 25%;
+    background-color: #f4ece6; /* Nền kem đậm hơn một chút */
+    padding: 40px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.huge-letter {
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 250px;
+    color: #ffffff; /* Chữ G màu trắng */
+    opacity: 0.7; /* Làm hơi mờ đi */
+    line-height: 1;
+    z-index: 1; /* Nằm dưới ảnh sản phẩm */
+}
+
+.left-box img {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.left-box-text {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.cat-name {
+    font-family: 'Montserrat', sans-serif;
+    color: #d19f7b;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+/* Khối ảnh lớn ở giữa */
+.center-image {
+    width: 55%;
+    height: 500px;
+    margin-left: -5%; /* Kéo lùi sang trái để đè một chút lên khối trái */
+    z-index: 1;
+}
+
+.center-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Khối chữ nằm bên phải cùng */
+.right-text {
+    width: 30%;
+    background-color: #fdfcf8;
+    padding: 40px;
+    margin-left: -10%; /* Kéo lùi sang trái để đè mạnh lên bức ảnh giữa */
+    z-index: 3;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.05); /* Đổ bóng nhẹ để tách biệt khỏi ảnh */
+}
+
+.right-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    line-height: 1.1;
+    color: #102738;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+/* =========================================
+   CÁC PHẦN CUỐI CÙNG
+========================================= */
+
+/* --- 1. NEWS & ARTICLES --- */
+.news-articles {
+    padding: 100px 8%;
+    background-color: #fdfcf8;
+}
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+.news-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+.date {
+    font-family: 'Montserrat', sans-serif;
+    color: #d19f7b;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.news-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: #102738;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+.news-card .desc {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: #4a6478;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.read-more {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #102738;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+/* --- 2. TESTIMONIAL --- */
+.testimonial-section {
+    padding: 150px 8%;
+    background-color: #fdfcf8;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.bg-huge-text {
+    position: absolute;
+    font-family: 'Playfair Display', serif;
+    font-size: 250px;
+    color: #f4ece6; /* Màu chữ siêu nhạt */
+    z-index: 1;
+    white-space: nowrap;
+}
+.text-left { top: 20%; left: -10%; }
+.text-right { bottom: -10%; right: -5%; }
+
+.testi-content {
+    position: relative;
+    z-index: 2; /* Nổi lên trên chữ mờ */
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.avatar-circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 1px solid #d19f7b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+    color: #d19f7b;
+    margin-bottom: 20px;
+    background-color: #fdfcf8;
+    box-shadow: 0 0 0 8px #f4ece6; /* Viền kép */
+}
+.author-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: #102738;
+    margin-bottom: 30px;
+}
+.quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-style: italic;
+    color: #4a6478;
+    line-height: 1.5;
+    margin-bottom: 40px;
+}
+.quote-dots span {
+    display: inline-block;
+    width: 8px; height: 8px;
+    background-color: #eeddd3;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+.quote-dots .dot-active { background-color: #d19f7b; }
+
+/* --- 3. BRANDS SECTION --- */
+.brands-section {
+    display: flex;
+    padding: 100px 8%;
+    background-color: #fdfcf8;
+    align-items: center;
+}
+.brands-left {
+    flex: 1;
+    position: relative;
+}
+.brands-left .huge-letter {
+    top: -50px; left: 0;
+    color: #f4ece6;
+}
+.grey-box {
+    position: absolute;
+    width: 250px; height: 250px;
+    background-color: #d1d5d8;
+    top: 50px; right: 50px;
+    z-index: 1;
+}
+.brands-left img {
+    position: relative;
+    z-index: 2;
+    width: 70%;
+    border: 10px solid #fdfcf8; /* Viền trắng tách ảnh khỏi khối xám */
+}
+.brands-right {
+    flex: 1.5;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+.brand-box {
+    background-color: #f4ece6;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.brand-box p {
+    font-family: 'Playfair Display', serif;
+    color: #d19f7b;
+    font-size: 16px;
+    font-style: italic;
+}
+
+/* --- 4. FAQ SECTION --- */
+.faq-section {
+    display: flex;
+    padding: 100px 8%;
+    background-color: #fdfcf8;
+    gap: 80px;
+}
+.faq-left { flex: 1; }
+.faq-left h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 55px;
+    color: #102738;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.faq-list {
+    list-style: none;
+    margin-top: 40px;
+}
+.faq-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+    border-bottom: 1px solid #eeddd3;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #102738;
+    cursor: pointer;
+}
+.plus-icon { color: #102738; font-size: 24px; }
+
+.faq-right {
+    flex: 1;
+    position: relative;
+    min-height: 500px;
+}
+.faq-right .huge-letter {
+    bottom: -50px; left: -50px;
+    color: #f4ece6;
+    font-size: 300px;
+}
+.img-back {
+    position: absolute;
+    width: 60%;
+    top: 0; right: 0;
+    z-index: 1;
+}
+.img-front {
+    position: absolute;
+    width: 60%;
+    bottom: 0; left: 0;
+    z-index: 2;
+    border: 15px solid #fdfcf8;
+}
+
+/* --- 5. FOOTER --- */
+.site-footer {
+    position: relative;
+    padding: 100px 8% 50px 8%;
+    background-color: #fdfcf8;
+    text-align: center;
+    overflow: hidden;
+}
+.footer-bg-text {
+    position: absolute;
+    bottom: -20px; left: 0; width: 100%;
+    font-family: 'Playfair Display', serif;
+    font-size: 180px;
+    line-height: 0.8;
+    color: #f4ece6;
+    z-index: 1;
+    white-space: nowrap;
+}
+.footer-logo {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 60px;
+}
+.footer-columns {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+}
+.f-col h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #102738;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+.f-col ul { list-style: none; }
+.f-col ul li { margin-bottom: 15px; }
+.f-col ul li a, .f-col p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: #4a6478;
+    text-decoration: none;
+    line-height: 1.8;
+}
+.center-col p { margin-bottom: 15px; }
+.footer-socials {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.footer-socials a {
+    color: #102738;
+    text-decoration: none;
+    font-size: 20px;
+}
