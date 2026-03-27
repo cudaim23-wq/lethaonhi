@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Giỏ hàng - Aurora Jewelry</title>
+    <style>
+        .cart-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .cart-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        
+        .cart-table th,
+        .cart-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .cart-table th {
+            background: #f8f9fa;
+            font-weight: bold;
+        }
+        
+        .cart-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        
+        .quantity-btn:hover {
+            background: #f8f9fa;
+        }
+        
+        .cart-summary {
+            text-align: right;
+            margin-bottom: 30px;
+        }
+        
+        .cart-total {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .cart-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: #333;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #555;
+        }
+        
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+        
+        .btn-secondary:hover {
+            background: #e9ecef;
+        }
+        
+        .empty-cart {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .empty-cart h2 {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .remove-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        .remove-btn:hover {
+            background: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="anh.jpg/logo.jpg">
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="trangchu.html">Trending</a></li>
+                <li><a href="trangchu.html">Collection</a></li>
+                <li><a href="trangchu.html">Testimonials</a></li>
+                <li><a href="trangchu.html">Contact Us</a></li>
+                <li>
+                    <a href="cart.html" class="cart-icon">
+                        <span class="cart-text">🛒</span>
+                        <span id="count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="cart-container">
+        <div class="cart-header">
+            <h1>Giỏ hàng của bạn</h1>
+            <p><i>Review and manage your selected items</i></p>
+        </div>
+
+        <div id="cart-content">
+            <!-- Giỏ hàng sẽ được load bằng JavaScript -->
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+</body>
+</html>

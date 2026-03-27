@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Sapphire - Aurora Gemstore</title>
+    <style>
+        .product-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 8% 80px;
+            background-color: #fdfcf8;
+            gap: 80px;
+        }
+
+        /* ẢNH BÊN TRÁI */
+        .product-gallery {
+            flex: 1;
+            position: relative;
+        }
+
+        .main-image-wrap {
+            position: relative;
+            border-radius: 0 120px 0 120px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(26, 82, 118, 0.15);
+        }
+
+        .main-image-wrap img {
+            width: 100%;
+            height: 560px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .main-image-wrap:hover img {
+            transform: scale(1.04);
+        }
+
+        .gem-badge {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            background: linear-gradient(135deg, #1a5276, #e74c3c);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .deco-block {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            background: #e8f4fd;
+            border-radius: 50%;
+            bottom: -30px;
+            right: -30px;
+            z-index: -1;
+        }
+
+        /* THÔNG TIN BÊN PHẢI */
+        .product-info {
+            flex: 1;
+        }
+
+        .product-info .subtitle {
+            margin-bottom: 12px;
+        }
+
+        .product-info h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 62px;
+            font-weight: 400;
+            color: #102738;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        body.dark-theme .product-info h1 { color: #eee; }
+
+        .product-tagline {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 18px;
+            color: #4a6478;
+            margin-bottom: 35px;
+            line-height: 1.6;
+        }
+
+        /* THÔNG SỐ KỸ THUẬT */
+        .specs-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #d19f7b;
+            margin-bottom: 18px;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 40px;
+        }
+
+        .spec-item {
+            background: #f9f4f0;
+            border-radius: 10px;
+            padding: 16px 20px;
+            border-left: 3px solid #1a5276;
+        }
+
+        body.dark-theme .spec-item {
+            background: #2d3561;
+        }
+
+        .spec-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .spec-value {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: #102738;
+        }
+
+        body.dark-theme .spec-value { color: #eee; }
+
+        /* GIÁ & NÚT */
+        .price-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .old-price-detail {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            color: #bbb;
+            text-decoration: line-through;
+        }
+
+        .current-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            color: #1a5276;
+            font-weight: 700;
+        }
+
+        .discount-tag {
+            background: #e8f4fd;
+            color: #1a5276;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-add-cart {
+            background: #1a5276;
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .btn-add-cart:hover {
+            background: #154360;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(26, 82, 118, 0.3);
+        }
+
+        .btn-back {
+            background: transparent;
+            color: #102738;
+            border: 1.5px solid #d19f7b;
+            padding: 16px 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .btn-back:hover {
+            background: #d19f7b;
+            color: white;
+        }
+
+        body.dark-theme .btn-back { color: #eee; }
+
+        /* SECTION MÔ TẢ */
+        .product-desc-section {
+            padding: 80px 8%;
+            background: #f9f4f0;
+        }
+
+        body.dark-theme .product-desc-section { background: #16213e; }
+
+        .desc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .desc-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            color: #102738;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        body.dark-theme .desc-text h2 { color: #eee; }
+
+        .desc-text p {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 17px;
+            color: #4a6478;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 25px;
+        }
+
+        .feature-list li {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            color: #4a6478;
+            padding: 10px 0;
+            border-bottom: 1px solid #eeddd3;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .feature-list li::before {
+            content: '◆';
+            color: #1a5276;
+            font-size: 8px;
+            flex-shrink: 0;
+        }
+
+        .desc-image img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 80px 0 80px 0;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        /* CARE SECTION */
+        .care-section {
+            padding: 80px 8%;
+            background: #fdfcf8;
+            text-align: center;
+        }
+
+        body.dark-theme .care-section { background: #1a1a2e; }
+
+        .care-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            color: #102738;
+            font-weight: 400;
+            margin-bottom: 50px;
+        }
+
+        body.dark-theme .care-section h2 { color: #eee; }
+
+        .care-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .care-card {
+            background: #f9f4f0;
+            border-radius: 16px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        body.dark-theme .care-card { background: #2d3561; }
+
+        .care-card:hover { transform: translateY(-5px); }
+
+        .care-icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .care-card h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: #102738;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        body.dark-theme .care-card h4 { color: #eee; }
+
+        .care-card p {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 15px;
+            color: #4a6478;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header" style="background: rgba(253,252,248,0.95); backdrop-filter: blur(10px);">
+        <div class="logo">
+            <img src="anh.jpg/logo.jpg">
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="trangchu.html">Trending</a></li>
+                <li><a href="trangchu.html">Collection</a></li>
+                <li><a href="trangchu.html">Testimonials</a></li>
+                <li><a href="trangchu.html">Contact Us</a></li>
+                <li>
+                    <a href="cart.html" class="cart-icon">
+                        <span class="cart-text">🛒</span>
+                        <span id="count">0</span>
+                    </a>
+                </li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle-btn">
+                        <span id="theme-icon">🌙</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="product-hero">
+        <div class="product-gallery">
+            <div class="main-image-wrap">
+                <img src="anh.jpg/z7625724983856_c1d68f84c4808cade44e71ae604fcedf.jpg" alt="Sapphire">
+                <span class="gem-badge">⚡ NEW ARRIVAL</span>
+            </div>
+            <div class="deco-block"></div>
+        </div>
+
+        <div class="product-info">
+            <span class="subtitle">PRECIOUS GEMSTONE</span>
+            <h1>Sapphire<br>Deluxe<span class="dot"></span></h1>
+            <p class="product-tagline">
+                Viên lam ngọc thiên nhiên thuần khiết, mang sắc xanh huyền bí
+                như bầu trời đêm — biểu tượng của trí tuệ và sự thủy chung.
+            </p>
+
+            <p class="specs-title">Thông số kỹ thuật</p>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <div class="spec-label">Chiều dài</div>
+                    <div class="spec-value">1.5 cm</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Chiều rộng</div>
+                    <div class="spec-value">2.8 cm</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Chiều cao</div>
+                    <div class="spec-value">1.2 cm</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Trọng lượng</div>
+                    <div class="spec-value">15 ct</div>
+                </div>
+                <div class="spec-item" style="grid-column: span 2;">
+                    <div class="spec-label">Hình dạng</div>
+                    <div class="spec-value">Oval (Bầu dục)</div>
+                </div>
+            </div>
+
+            <div class="price-row">
+                <span class="old-price-detail">17.000.000 VND</span>
+                <span class="current-price">11.900.000 VND</span>
+                <span class="discount-tag">−30%</span>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn-add-cart add-to-cart" data-name="sapphire">— Thêm vào giỏ hàng</button>
+                <a href="trangchu.html" class="btn-back">← Quay lại</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MÔ TẢ -->
+    <section class="product-desc-section">
+        <div class="desc-grid">
+            <div class="desc-text">
+                <h2>Vẻ đẹp của<br>Lam Ngọc Sapphire<span class="dot"></span></h2>
+                <p>Sapphire là một trong tứ đại quý ngọc thế giới, được mệnh danh là "Biển cả đóng băng". Sắc đỏ huyền bí đến từ hàm lượng sắt và titan trong cấu trúc tinh thể corundum xanh.</p>
+                <p>Viên sapphire này được khai thác và chế tác thủ công bởi các nghệ nhân lành nghề, đảm bảo vẻ đẹp lấp lánh tự nhiên nhất.</p>
+                <ul class="feature-list">
+                    <li>Hồng ngọc thiên nhiên 100%, không xử lý nhiệt</li>
+                    <li>Chứng nhận GIA / GRS đi kèm</li>
+                    <li>Màu sắc: Royal Blue — xanh hoàng gia đặc trưng</li>
+                    <li>Độ trong: VS (Very Slightly Included)</li>
+                    <li>Xuất xứ: Sri Lanka / Kashmir</li>
+                </ul>
+            </div>
+            <div class="desc-image">
+                <img src="anh.jpg/z7625724983856_c1d68f84c4808cade44e71ae604fcedf.jpg" alt="Sapphire detail">
+            </div>
+        </div>
+    </section>
+
+    <!-- CARE -->
+    <section class="care-section">
+        <h2>Bảo quản Lam Ngọc Sapphire<span class="dot"></span></h2>
+        <div class="care-cards">
+            <div class="care-card">
+                <div class="care-icon">🧴</div>
+                <h4>Vệ sinh</h4>
+                <p>Dùng nước ấm, xà phòng nhẹ và bàn chải mềm. Tránh hóa chất tẩy mạnh làm phai màu.</p>
+            </div>
+            <div class="care-card">
+                <div class="care-icon">📦</div>
+                <h4>Bảo quản</h4>
+                <p>Để riêng trong hộp nhung mềm, tránh tiếp xúc với các đá quý cứng hơn để không bị trầy.</p>
+            </div>
+            <div class="care-card">
+                <div class="care-icon">☀️</div>
+                <h4>Lưu ý</h4>
+                <p>Tránh ánh nắng trực tiếp kéo dài và nhiệt độ cao đột ngột để giữ màu sắc bền đẹp.</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="java.js"></script>
+    <script>
+        // Load theme
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('auroraTheme') || 'light';
+            document.body.classList.toggle('dark-theme', savedTheme === 'dark');
+            document.getElementById('theme-icon').textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+            document.getElementById('theme-toggle').addEventListener('click', function() {
+                const isDark = document.body.classList.toggle('dark-theme');
+                const theme = isDark ? 'dark' : 'light';
+                localStorage.setItem('auroraTheme', theme);
+                document.getElementById('theme-icon').textContent = isDark ? '☀️' : '🌙';
+            });
+        });
+    </script>
+</body>
+</html>

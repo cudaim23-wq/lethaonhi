@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>lethaonhi gemstore</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src ="anh.jpg/logo.jpg">
+            
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Trending</a></li>
+                <li><a href="#">Collection</a></li>
+                <li><a href="#">Testimonials</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li>
+        <a href="cart.html" class="cart-icon">
+            <span class="cart-text">🛒</span>
+            <span id="count">0</span>
+        </a>
+    </li>
+    <li>
+        <button id="theme-toggle" class="theme-toggle-btn">
+            <span id="theme-icon">🌙</span>
+        </button>
+    </li>
+            </ul>
+            
+        </nav>
+    </header>
+
+    <!-- PHẦN HERO SECTION (Màn hình chính) -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="subtitle">JEWELRY</span>
+            <h1>Shine Bright <br> With Aurora<span class="dot"></span></h1>
+            <p><i>Every day is your special day with our fine jewelry!</i></p>
+            <a href="#" class="btn-shop">&mdash; Shop</a>
+        </div>
+        <div class="hero-image">
+            <!-- Thay link ảnh này bằng link ảnh người mẫu của bạn -->
+            <img src="anh.jpg/images.jpg" alt="Aurora Model">
+        </div>
+    </section>
+    <!-- PHẦN FLASH SALE ĐẾM NGƯỢC -->
+    <section class="flash-sale">
+        <div class="flash-sale-header">
+            <h2>⚡ FLASH SALE</h2>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">00</span>
+                    <span class="countdown-label">Ngày</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-label">Giờ</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">Phút</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">Giây</span>
+                </div>
+            </div>
+        </div>
+        <div class="flash-sale-products">
+            <div class="product-card">
+                <a href="Sapphire .html"><img src="anh.jpg/z7625724983856_c1d68f84c4808cade44e71ae604fcedf.jpg" alt="Flash Sale 1" style="cursor:pointer;"></a>
+                <div class="flash-badge">-30%</div>
+                <h4>Silky Sapphire</h4>
+                <p class="old-price">17.000.000 VND</p>
+                <p class="flash-price">11.900.000 VND</p>
+                <button class="add-to-cart" data-name="sapphire">Add</button>
+            </div>
+            <div class="product-card">
+                <a href="ruby.html"><img src="anh.jpg/z7625724984668_689310eae47e67df0eb2935dd06f92e8.jpg" alt="Flash Sale 2" style="cursor:pointer;"></a>
+                <div class="flash-badge">-20%</div>
+                <h4>Ruby Deluxe</h4>
+                <p class="old-price">1.200.000 VND</p>
+                <p class="flash-price">960.000 VND</p>
+                <button class="add-to-cart" data-name="ruby">Add</button>
+            </div>
+            <div class="product-card">
+                <a href="Diamond.html"><img src="anh.jpg/z7625724997735_6959a26e8844298654e2539fbd277ad7.jpg" alt="Flash Sale 3" style="cursor:pointer;"></a>
+                <div class="flash-badge">-25%</div>
+                <h4>Diamond Premium</h4>
+                <p class="old-price">13.000.000 VND</p>
+                <p class="flash-price">9.750.000 VND</p>
+                <button class="add-to-cart" data-name="diamond">Add</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHẦN BEST-SELLING (Sản phẩm bán chạy) -->
+    <section class="best-selling">
+        <div class="section-header">
+            <span class="subtitle">TRENDING</span>
+            <h2>Best-Selling Items<span class="dot"></span></h2>
+            <p><i>In this section, you will find fine jewelry chosen by hundreds of our customers around the world. Best
+                    price guaranteed.</i></p>
+        </div>
+
+        <div class="best-selling-products">
+            <!-- Sản phẩm 1 -->
+            <div class="product-card">
+                <a href="Sapphire .html"><img src="anh.jpg/z7625724983856_c1d68f84c4808cade44e71ae604fcedf.jpg" alt="Butterfly" style="cursor:pointer;"></a>
+                <div class="trending-badge">HOT</div>
+                <h4>Silky Sapphire</h4>
+                <p class="old-price">15.000.000 VND</p>
+                <p class="trending-price">12.000.000 VND</p>
+                <button class="add-to-cart" data-name="sapphire">Add</button>
+            </div>
+
+            <!-- Sản phẩm 2 -->
+            <div class="product-card">
+                <a href="ruby.html"><img src="anh.jpg/z7625724984668_689310eae47e67df0eb2935dd06f92e8.jpg" alt="Golden Sun" style="cursor:pointer;"></a>
+                <div class="trending-badge">-20%</div>
+                <h4>Ruby Deluxe</h4>
+                <p class="old-price">1.200.000 VND</p>
+                <p class="trending-price">990.000 VND</p>
+                <button class="add-to-cart" data-name="ruby">Add</button>
+            </div>
+
+            <!-- Sản phẩm 3 -->
+            <div class="product-card">
+                <a href="Diamond.html"><img src="anh.jpg/z7625724997735_6959a26e8844298654e2539fbd277ad7.jpg" alt="Elegy" style="cursor:pointer;"></a>
+                <div class="trending-badge">NEW</div>
+                <h4>Diamond Premium</h4>
+                <p class="old-price">12.000.000 VND</p>
+                <p class="trending-price">10.000.000 VND</p>
+                <button class="add-to-cart" data-name="diamond">Add</button>
+            </div>
+        </div>
+    </section>
+    <!-- PHẦN BỘ SƯU TẬP (Our Youth Collection) -->
+    <section class="collection-promo">
+        <div class="promo-image-box">
+            <div class="slider-wrapper">
+                <img class="slide active" src="anh.jpg/z7625725001399_fd7dee2449b5b6a756e8175ad0c419a5.jpg">
+                <img class="slide" src="anh.jpg/z7625724984668_689310eae47e67df0eb2935dd06f92e8.jpg">
+                <img class="slide" src="anh.jpg/z7625724984668_689310eae47e67df0eb2935dd06f92e8.jpg">
+                
+                <button class="slider-btn prev-btn">&#10094;</button>
+                <button class="slider-btn next-btn">&#10095;</button>
+            </div>
+        </div>
+    </section>
+    <!-- PHẦN CATEGORIES (3 Danh mục) -->
+    <section class="categories-section">
+        <div class="section-header">
+            <p><i>Choose the fine jewelry that you will shine in tomorrow.</i></p>
+        </div>
+
+        <div class="categories-grid">
+            <!-- Danh mục 1 -->
+            <div class="category-item">
+                <img src="https://images.unsplash.com/photo-1599643478524-fb66f70362f6?ixlib=rb-4.0.3&w=600&q=80"
+                    alt="Necklaces">
+                <h3>Ruby</h3>
+            </div>
+
+            <!-- Danh mục 2 -->
+            <div class="category-item">
+                <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?ixlib=rb-4.0.3&w=600&q=80"
+                    alt="Rings">
+                <h3>Sapphire</h3>
+            </div>
+
+            <!-- Danh mục 3 -->
+            <div class="category-item">
+                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&w=600&q=80"
+                    alt="Earrings">
+                <h3>Garnet</h3>
+            </div>
+        </div>
+    </section>
+    <!-- PHẦN AURORA PROM SET (Ảnh bên phải, Chữ bên trái) -->
+    <section class="prom-set">
+        <div class="prom-content">
+            <span class="subtitle">SUMMER 2022</span>
+            <h2>Aurora Prom Set<span class="dot"></span></h2>
+            <p class="italic-desc">Perfect match with:</p>
+
+            <!-- Vòng tròn chứa sản phẩm nhỏ -->
+            <div class="match-item">
+                <div class="match-img-circle">
+                    <!-- Tạm dùng ảnh nhẫn -->
+                    <img src="https://m.media-amazon.com/images/I/41XL9GTmO8L._AC_UF894,1000_QL80_.jpg"
+                        alt="Ring">
+                </div>
+                <p class="match-price">* Full set for <span class="highlight-price">$699</span></p>
+            </div>
+        </div>
+
+        <div class="prom-image">
+            <img src="https://images.unsplash.com/photo-1599643478524-fb66f70362f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Aurora Prom Model">
+        </div>
+    </section>
+    <!-- PHẦN GENTLE BEAUTY (Ảnh bên trái, Chữ bên phải) -->
+    <section class="gentle-beauty">
+        <div class="beauty-image-wrapper">
+            <div class="bg-block-left"></div> <!-- Khối màu phía sau ảnh -->
+            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Beauty Model">
+        </div>
+
+        <div class="beauty-content">
+            <span class="subtitle">DESIGNER JEWELRY</span>
+            <h2>Gentle Beauty <br> in You<span class="dot"></span></h2>
+            <p class="italic-desc">We create fine jewelry that helps you stand out of the crowd:</p>
+
+            <!-- Danh sách với icon hình thoi -->
+            <ul class="diamond-list">
+                <li>Emphasizes your natural beauty.</li>
+                <li>Suits any outfits you prefer.</li>
+                <li>Delights you every day with its exclusive design.</li>
+            </ul>
+        </div>
+    </section>
+    <!-- PHẦN NEW COLLECTION VỚI TABS -->
+    <section class="new-collection-tabs">
+        <div class="section-header">
+            <h2>New Collection<span class="dot"></span></h2>
+            <p><i>Shine bright in our new 2026 collection of fine jewelry!</i></p>
+        </div>
+
+        <!-- Thanh điều hướng Tab -->
+        <div class="tabs">
+            <span class="tab active">Earrings</span>
+            <span class="tab">Rings</span>
+            <span class="tab">Necklaces</span>
+        </div>
+
+        <!-- Lưới 4 sản phẩm  -->
+        <div class="product-grid">
+            <!-- Sản phẩm 1 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                    alt="Bagels">
+                <h4>Bagels</h4>
+                <p class="price">$199,00</p>
+               <button class="btn-cart add-to-cart" data-name="bagels">— Add to cart</button>
+            </div>
+
+            <!-- Sản phẩm 2 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                    alt="Dalida">
+                <h4>Dalida</h4>
+                <p class="price">$199,00</p>
+                <button class="btn-cart add-to-cart" data-name="dalida">— Add to cart</button>
+            </div>
+
+            <!-- Sản phẩm 3 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                    alt="Fantasy">
+                <h4>Fantasy</h4>
+                <p class="price">$249,00</p>
+                <button class="btn-cart add-to-cart" data-name="fantasy">— Add to cart</button>
+            </div>
+
+            <!-- Sản phẩm 4 -->
+            <div class="product-card">
+                <img
+                    src="https://images.unsplash.com/photo-1605100804763-247f67b2548e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80">
+                <h4>Keys</h4>
+                <p class="price">$299,00</p>
+                <button class="btn-cart add-to-cart" data-name="keys">— Add to cart</button>
+            </div>
+        </div>
+    </section>
+    <!-- PHẦN NEW ARRIVALS (Bố cục đan xen) -->
+    <section class="new-arrivals-complex">
+
+        <!-- Cột trái: Chứa chữ G chìm và ảnh nhỏ -->
+        <div class="left-box">
+            <span class="huge-letter">G</span>
+            <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?ixlib=rb-4.0.3&w=400&q=80"
+                alt="Gold Ring">
+            <div class="left-box-text">
+                <p class="cat-name">&mdash; Earrings</p>
+                <p class="match-price">* Golden Sun <span class="highlight-price">$299</span></p>
+            </div>
+        </div>
+
+        <!-- Cột giữa: Bức ảnh ngang lớn -->
+        <div class="center-image">
+            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&w=800&q=80"
+                alt="Leaf Earrings">
+        </div>
+
+        <!-- Cột phải: Khối chữ đè lên ảnh giữa -->
+        <div class="right-text">
+            <span class="subtitle">NEW ARRIVALS</span>
+            <h2>New Collection <br> of Fine Jewelry<span class="dot"></span></h2>
+            <a href="#" class="btn-shop">&mdash; Shop now</a>
+        </div>
+
+    </section>
+    <!-- 1. PHẦN NEWS & ARTICLES (BÀI VIẾT) -->
+    <section class="news-articles">
+        <div class="section-header">
+            <h2>Our News and Articles<span class="dot"></span></h2>
+            <p><i>Check out our latest articles to learn more about our brand and get tips on jewelry care.</i></p>
+        </div>
+        <div class="news-grid">
+            <div class="news-card">
+                <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&w=400&q=80"
+                    alt="News 1">
+                <p class="date">01 FEBRUARY 2024</p>
+                <h3>The Most Romantic Picks</h3>
+                <p class="desc">Valentine's Day is approaching! If you have not yet decided on your outfit, we have
+                    picked the best jewelry sets...</p>
+                <a href="#" class="read-more">READ MORE &rarr;</a>
+            </div>
+            <div class="news-card">
+                <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?ixlib=rb-4.0.3&w=400&q=80"
+                    alt="News 2">
+                <p class="date">15 MARCH 2024</p>
+                <h3>Welcome a New Hot Trend</h3>
+                <p class="desc">Massive chains in necklaces and bracelets are a new hot trend for 2024. Read this
+                    article to learn how to wear them...</p>
+                <a href="#" class="read-more">READ MORE &rarr;</a>
+            </div>
+            <div class="news-card">
+                <img src="https://images.unsplash.com/photo-1599643478524-fb66f70362f6?ixlib=rb-4.0.3&w=400&q=80"
+                    alt="News 3">
+                <p class="date">01 APRIL 2024</p>
+                <h3>Jewelry for Business Styles</h3>
+                <p class="desc">Some companies have strict dress code requirements, including accessories. Let's see
+                    what kind of jewelry you can wear...</p>
+                <a href="#" class="read-more">READ MORE &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. PHẦN TESTIMONIAL (ĐÁNH GIÁ CỦA KHÁCH HÀNG) -->
+    <section class="testimonial-section">
+        <span class="bg-huge-text text-left">jewelry</span>
+        <span class="bg-huge-text text-right">testimoni</span>
+
+        <div class="testi-content">
+            <div class="avatar-circle">A</div>
+            <p class="author-name">Alice Meterson</p>
+            <p class="quote">«I love every item made by Aurora. Every time I open their website, I want to buy
+                everything! The quality is very good, and looking at these items, there's no doubt it's the designer
+                jewelry.»</p>
+            <div class="quote-dots">
+                <span class="dot-active"></span><span></span><span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. PHẦN BRANDS (ĐỐI TÁC VÀ ẢNH LỆCH) -->
+    <section class="brands-section">
+        <div class="brands-left">
+            <span class="huge-letter">P</span>
+            <div class="grey-box"></div>
+            <img src="https://images.unsplash.com/photo-1605100804763-247f67b2548e?ixlib=rb-4.0.3&w=400&q=80"
+                alt="Necklace Model">
+        </div>
+        <div class="brands-right">
+            <!-- Tạm dùng chữ vì không có ảnh logo thật, sau này bạn thay thẻ <img> vào đây -->
+            <div class="brand-box">
+                <p>macy's</p>
+            </div>
+            <div class="brand-box">
+                <p>ZALES</p>
+            </div>
+            <div class="brand-box">
+                <p>Harrods</p>
+            </div>
+            <div class="brand-box">
+                <p>NORDSTROM</p>
+            </div>
+            <div class="brand-box">
+                <p>bloomingdale's</p>
+            </div>
+            <div class="brand-box">
+                <p>Dillard's</p>
+            </div>
+            <div class="brand-box">
+                <p>Diamond Chapter</p>
+            </div>
+            <div class="brand-box">
+                <p>Neiman Marcus</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. PHẦN FAQ (CÂU HỎI THƯỜNG GẶP) -->
+    <section class="faq-section">
+        <div class="faq-left">
+            <span class="subtitle">FAQ</span>
+            <h2>Need Help?</h2>
+            <p class="italic-desc">If you have any questions, feel free to contact us in any convenient way.</p>
+
+            <ul class="faq-list">
+                <li><span>Where do you ship to?</span> <span class="plus-icon">+</span></li>
+                <li><span>How can I make the order?</span> <span class="plus-icon">+</span></li>
+                <li><span>Can I change my order after it is placed?</span> <span class="plus-icon">+</span></li>
+                <li><span>Do you have offline stores?</span> <span class="plus-icon">+</span></li>
+                <li><span>Can I cancel my order?</span> <span class="plus-icon">+</span></li>
+            </ul>
+        </div>
+        <div class="faq-right">
+            <span class="huge-letter">W</span>
+            <img class="img-back"
+                src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&w=400&q=80"
+                alt="Jewelry Back">
+            <img class="img-front"
+                src="https://images.unsplash.com/photo-1599643478524-fb66f70362f6?ixlib=rb-4.0.3&w=400&q=80"
+                alt="Jewelry Front">
+        </div>
+    </section>
+
+    <!-- 5. PHẦN FOOTER (CHÂN TRANG) -->
+    <footer class="site-footer">
+        <div class="footer-bg-text">This is your perfect <br> golden jewelry</div>
+
+        <div class="footer-logo">
+            <span class="ring-icon">💍</span>
+            <span class="logo-text">Aurora</span>
+        </div>
+
+        <div class="footer-columns">
+            <div class="f-col">
+                <h4>STORE</h4>
+                <ul>
+                    <li><a href="#">Trending</a></li>
+                    <li><a href="#">Collection</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </div>
+            <div class="f-col center-col">
+                <h4>GET IN TOUCH</h4>
+                <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ceafbbbca1bcaf8eaba3afa7a2e0ada1a3">[email&#160;protected]</a></p>
+                <p>+1 (234) 567 89 00</p>
+                <p>310 E 67th St, New York,<br>NY 10065, USA</p>
+            </div>
+            <div class="f-col">
+                <h4>CARE</h4>
+                <ul>
+                    <li><a href="#">Certificates</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Legal & Privacy</a></li>
+                    <li><a href="#">Returns</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-socials">
+            <!-- Tạm dùng Emoji thay icon mạng xã hội -->
+            <a href="#">📷</a>
+            <a href="#">🐦</a>
+            <a href="#">▶️</a>
+        </div>
+    </footer>
+    <button id="backToTop">↑</button>
+
+    <!-- PHẦN ĐÁNH GIÁ SẢN PHẨM -->
+    <section class="rating-section">
+        <div class="section-header">
+            <span class="subtitle">REVIEWS</span>
+            <h2>Đánh giá sản phẩm<span class="dot"></span></h2>
+            <p><i>Xem đánh giá từ khách hàng đã mua sản phẩm của chúng tôi</i></p>
+        </div>
+
+        <div class="rating-grid">
+            <div class="rating-card">
+                <img src="anh.jpg/z7625724983856_c1d68f84c4808cade44e71ae604fcedf.jpg" alt="Customer 1">
+                <div class="customer-info">
+                    <h4>Nguyễn Thị A</h4>
+                    <div class="star-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-score">4.8/5.0</span>
+                    </div>
+                    <p class="review-text">"Sản phẩm rất đẹp! Chất lượng vượt mong đợi. Giao hàng nhanh, đóng gói cẩn thận."</p>
+                    <p class="review-date">15/03/2024</p>
+                </div>
+            </div>
+
+            <div class="rating-card">
+                <img src="anh.jpg/z7625724984668_689310eae47e67df0eb2935dd06f92e8.jpg" alt="Customer 2">
+                <div class="customer-info">
+                    <h4>Trần Văn B</h4>
+                    <div class="star-rating">
+                        <span class="stars">★★★★</span>
+                        <span class="rating-score">4.5/5.0</span>
+                    </div>
+                    <p class="review-text">"Ruby rất lấp lánh! Màu sắc đẹp, size chuẩn. Rất hài lòng với sản phẩm."</p>
+                    <p class="review-date">10/03/2024</p>
+                </div>
+            </div>
+
+            <div class="rating-card">
+                <img src="anh.jpg/z7625724997735_6959a26e8844298654e2539fbd277ad7.jpg" alt="Customer 3">
+                <div class="customer-info">
+                    <h4>Lê Thị C</h4>
+                    <div class="star-rating">
+                        <span class="stars">★★★★★★</span>
+                        <span class="rating-score">5.0/5.0</span>
+                    </div>
+                    <p class="review-text">"Diamond Premium hoàn toàn xứng tầm! Vàng 18k, thiết kế tinh xảo. Đáng đồng tiền!"</p>
+                    <p class="review-date">08/03/2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="java.js"></script>
+</body>
+</html>
